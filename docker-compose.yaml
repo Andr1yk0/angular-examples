@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  node:
+    container_name: angular_app
+    user: node
+    build:
+      context: ./
+      dockerfile: docker/node/Dockerfile
+    volumes:
+      - ./app:/home/node/app
+    working_dir: /home/node/app
+    ports:
+      - "4201:4200"
+    tty: true
